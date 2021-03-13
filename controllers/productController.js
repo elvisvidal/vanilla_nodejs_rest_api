@@ -1,4 +1,5 @@
 const Product = require('../modules/productModule');
+const { getPostData } = require('../utils');
 
 /**
  * Gets all produts
@@ -46,11 +47,9 @@ async function getProduct(req, res, id) {
  */
 async function createProduct(req, res) {
   try {
-    const product = {
-      title: 'Test Product',
-      description: 'This is my product',
-      price: 100
-    };
+    const body = await getPostData(req);
+    const { title, description, price } = JSON.parse(body);
+    const product = { title, description, price };
     const newProduct = await Product.create(product);
 
     res.writeHead(201, { 'Contet-Type': 'application/json' });
