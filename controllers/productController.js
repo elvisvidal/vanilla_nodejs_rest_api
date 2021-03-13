@@ -39,7 +39,29 @@ async function getProduct(req, res, id) {
   }
 }
 
+/**
+ * Create a new product
+ * @param {Object} req Request object
+ * @param {Object} res Response object
+ */
+async function createProduct(req, res) {
+  try {
+    const product = {
+      title: 'Test Product',
+      description: 'This is my product',
+      price: 100
+    };
+    const newProduct = await Product.create(product);
+
+    res.writeHead(201, { 'Contet-Type': 'application/json' });
+    return res.end(JSON.stringify(newProduct));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   getProducts,
-  getProduct
+  getProduct,
+  createProduct
 }
