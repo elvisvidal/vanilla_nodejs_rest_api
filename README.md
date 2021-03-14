@@ -1,5 +1,5 @@
 # Vanilla Node.js REST api
-Creating a simple REST api with only Node.js (no Express)
+Creating a simple REST api with only Node.js (no Express). In order to keep it simple, instead using any DB, I'm just using /data/products.js file.
 
 ## Setup
 To get the project up and running you gonna need:
