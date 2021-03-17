@@ -80,7 +80,7 @@ To get the project up and running you gonna need:
 
 * Success Response
 
-  * code: 200
+  * code: 201
   * content: `{
     "id": "1",
     "name": "Airpods",
